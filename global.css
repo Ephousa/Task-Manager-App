@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(236, 205, 166);
+    font-size: 2.5vh;
+}
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;  
+}
+.left-header{
+    flex:1;
+    border-right: 2px solid black;
+    padding-right: 10px;
+    text-align: center;
+}
+.right-header{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+}
+.right-header .head-box{
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
