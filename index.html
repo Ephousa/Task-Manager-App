@@ -10,7 +10,7 @@
     <div class="container">
     <header class="main-header">
        <div class="left-header">
-        <h1>Task Manager</h1>
+        <h2>Task Manager</h2>
        </div>
 
         <div class="right-header">
@@ -26,13 +26,34 @@
 
         </div>
     </header>
-
-    <div class="middle-container">
-        <div id="todo-box"></div>
-        <div id="inprogress-box"></div>
-        <div id="done-box"></div>
+    <div class="task-crud">
+        <button id="create-task" class="task-buttons">Task Ekle</button>
+        <button id="delete-task" class="task-buttons">Task Sil</button>
+        <button id="edit-task"   class="task-buttons">Task Düzenle</button>
+        
     </div>
 
+    <div class="middle-container">
+        <div id="todo">
+            <article class="todo-box"><strong>TODO</strong></article>
+        </div>
+        <div id="progress">
+            <article class="progress-box"><strong>In Progress</strong></article>
+        </div>
+        <div id="done">
+            <article class="done-box"><strong>Done</strong></article>
+        </div>
+    </div>
+     <div class="task-details">
+        <label>Yeni Görev Ekle: 
+        <textarea placeholder="Task Adınızı Giriniz" id="task-area"></textarea>
+        </label>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-link">TO DO</a>
+            <a href="#" class="dropdown-link">In Progress</a>
+            <a href="#" class="dropdown-link">Done</a>
+        </div>
+     </div>
 </div>
     <script src="app.js"></script>
 </body>

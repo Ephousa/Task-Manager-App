@@ -1,6 +1,7 @@
 body{
     background-color: rgb(236, 205, 166);
-    font-size: 2.5vh;
+    font-size: 2.2vh;
+    font-family:sans-serif;
 }
 .main-header{
     display: flex;
@@ -24,4 +25,79 @@ body{
     display: flex;
     margin-right: 30px;
     align-items: center;
+}
+.task-crud{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    min-height: auto;
+    margin-top: 15px;
+    margin-left:73vh;
+    
+}
+.task-buttons{
+    width: 15vh;
+    height: 4.5vh;
+    background-color: azure;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px gray;
+     transition: bacgkround-color 0.3s ease, color 0.3s ease;
+}
+.task-buttons:hover{
+    background-color: blueviolet;
+    color: white;
+}
+#delete-task{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.middle-container{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 15px;
+    margin-left: 12vh;
+}
+#todo{
+    width: 50vh;
+    height: 25vh;
+    border: 2px solid black;
+}
+.todo-box{
+    width: 94%;
+    height: 15%;
+    background-color: gray;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+#progress{
+    width: 50vh;
+    height: 25vh;
+    border: 2px solid black;
+}
+.progress-box{
+    width: 94%;
+    height: 15%;
+    background-color: blue;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+#done{
+    width: 50vh;
+    height: 25vh;
+    border: 2px solid black;
+}
+.done-box{
+    width: 94%;
+    height: 15%;
+    background-color: greenyellow;
+    border-bottom: 2px solid black;
+    padding:10px;
+    text-align: center;
 }
