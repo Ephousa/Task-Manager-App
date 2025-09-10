@@ -14,28 +14,42 @@
        </div>
 
         <div class="right-header">
-            <div class="head-box">
-               Tarayıcı: Google
+            <div id="browser-info"class="head-box">
+                
             </div>
             <div class="head-box">
             Son giriş tarihi: 06/09/2025
             </div>
+
         <div class="head-box">
-            Tema: <input type="radio" name="Dark Mode" id="switch-btn">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="slider"></span>
+            </label>
         </div>
 
         </div>
     </header>
-    <div class="task-crud">
-        <button id="create-task" class="task-buttons">Task Ekle</button>
-        <button id="delete-task" class="task-buttons">Task Sil</button>
-        <button id="edit-task"   class="task-buttons">Task Düzenle</button>
-        
-    </div>
+    <div class="task-details">
+        <div id="form-group">
+        <label for="task-area">Yeni Görev Ekle:</label>
+        <textarea placeholder="Task Adınızı Giriniz" id="task-area"></textarea>
+        </div>
+
+        <div class="dropdown-menu">
+            <button id="dropbtn">Status</button>
+            <div class="dropdown-content">
+            <a href="#">TO DO</a>
+            <a href="#">In Progress</a>
+            <a href="#">Done</a>
+            </div>
+        </div>
+        <button id="add-task">Ekle</button>
+     </div>
 
     <div class="middle-container">
         <div id="todo">
-            <article class="todo-box"><strong>TODO</strong></article>
+            <article class="todo-box"><strong>TO DO</strong></article>
         </div>
         <div id="progress">
             <article class="progress-box"><strong>In Progress</strong></article>
@@ -44,16 +58,7 @@
             <article class="done-box"><strong>Done</strong></article>
         </div>
     </div>
-     <div class="task-details">
-        <label>Yeni Görev Ekle: 
-        <textarea placeholder="Task Adınızı Giriniz" id="task-area"></textarea>
-        </label>
-        <div class="dropdown-menu">
-            <a href="#" class="dropdown-link">TO DO</a>
-            <a href="#" class="dropdown-link">In Progress</a>
-            <a href="#" class="dropdown-link">Done</a>
-        </div>
-     </div>
+
 </div>
     <script src="app.js"></script>
 </body>

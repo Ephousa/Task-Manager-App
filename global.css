@@ -2,6 +2,7 @@ body{
     background-color: rgb(236, 205, 166);
     font-size: 2.2vh;
     font-family:sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 .main-header{
     display: flex;
@@ -26,35 +27,177 @@ body{
     margin-right: 30px;
     align-items: center;
 }
-.task-crud{
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-    min-height: auto;
-    margin-top: 15px;
-    margin-left:73vh;
-    
-}
-.task-buttons{
-    width: 15vh;
-    height: 4.5vh;
-    background-color: azure;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 10px gray;
-     transition: bacgkround-color 0.3s ease, color 0.3s ease;
-}
-.task-buttons:hover{
-    background-color: blueviolet;
-    color: white;
-}
-#delete-task{
-    margin-left: 10px;
-    margin-right: 10px;
+
+/* Toggle switch kutusu */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
+/* Checkbox gizle */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider arka planı */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+/* Slider içindeki küçük yuvarlak */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Checkbox işaretlendiğinde slider rengi ve yuvarlak konumu değişir */
+input:checked + .slider {
+  background-color: gray;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark mode için body stilleme */
+.dark-theme{
+  background-color: black;
+}
+.light-theme{
+  background-color: rgb(236, 205, 166);
+}
+body.dark-theme #todo,
+body.dark-theme #progress,
+body.dark-theme #done,
+body.dark-theme .main-header{
+border: 2px solid white;
+color: white;
+}
+body.dark-theme .left-header{
+  border-right: 2px solid white;
+}
+body.dark-theme .todo-box,
+body.dark-theme .progress-box,
+body.dark-theme .done-box{
+  border-bottom: 2px solid white;
+}
+
+/* Task Ekleme */
+.task-details{
+    width: 50%;
+    height: 10%; 
+    padding: 10px;    
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 300px;
+}
+#form-group{
+  display: flex;
+  align-items: flex-start; /* Üstten hizalama için */
+  gap: 15px;
+  max-width: 500px;
+  background-color: #f5e6d0;
+  padding: 15px;
+  border-radius: 8px;
+}
+#form-group label {
+    margin-top: 10px;
+      white-space: normal;
+      word-wrap: normal;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      
+    }
+   #form-group textarea {
+      width: 100%;
+      max-width: 200px;
+      height: 50px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical; /* Kullanıcı isterse yukarı-aşağı uzatabilir */
+    }
+
+   #form-group textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    }
+    /* Task ekleme - Görev durumu */
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+  margin: 0px 40px 0px 40px;
+}
+#dropbtn {
+  width: 150px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* DROPDOWN MENÜ */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;       /* Butonun hemen altına hizala */
+  left: 0;         /* Butonla hizalı */
+  background-color: #f1f1f1;
+  min-width: 150px; /* Buton kadar genişlik */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1;
+}
+/* LİNK STİLLERİ */
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  font-size: 1rem;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* DROPDOWN AÇILMA */
+.dropdown-menu:hover .dropdown-content {
+  display: block;
+}
+.dropdown-menu:hover #dropbtn {
+  background-color: #3e8e41;
+}
+
+/* Ekle butonu */
+#add-task{
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer; 
+}
+/* To do - In Progress - Done kutucukları */
 .middle-container{
     display: flex;
     align-items: center;
