@@ -51,10 +51,6 @@ document.addEventListener('DOMContentLoaded', function(){
 document.getElementById('add-task').addEventListener('click', function () {
     const taskText = document.getElementById('task-area').value.trim();
 
-    console.log("Seçilen Statü:", selectedStatus);
-console.log("Eklenecek metin:", taskText);
-
-
     if (!taskText || !selectedStatus){
         alert('Lütfen görev veya statü seçiniz!');
         return;
@@ -66,8 +62,16 @@ console.log("Eklenecek metin:", taskText);
     taskEl.style.margin = '5px';
     taskEl.style.padding = '5px';
     taskEl.style.backgroundColor = 'white';
-    
     document.getElementById('task-area').value = "";
+
+    //Hedef container: todo, progress, done
+
+    const container = document.getElementById(`${selectedStatus}-tasks`);
+    if(container){
+        container.appendChild(taskEl);
+    }else{
+        alert(`Target container not found for status: ${selectedStatus}`)
+    }
 
     //temizle
     document.getElementById('task-area').value = '';

@@ -262,4 +262,10 @@ body.dark-theme .done-box{
   font-size:14px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: black;
+}
+
+.task-container{
+  min-height: 100px;
+  padding: 10px;
 }
