@@ -263,9 +263,27 @@ body.dark-theme .done-box{
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   color: black;
+  white-space: normal; /*Satır taşması aktif*/
+  word-wrap:break-word; /*Uzun kelimeleri kır*/
+  overflow-wrap: break-word;
 }
 
 .task-container{
-  min-height: 100px;
+  max-height: 300px;
+  overflow-y: auto;
   padding: 10px;
+  word-wrap: break-word;
+}
+
+.task-container > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius:4px ;
+  color: black;
+  word-wrap: break-word;
+  overflow-wrap:break-word ;
 }
