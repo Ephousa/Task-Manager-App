@@ -7,7 +7,9 @@ darkMode.addEventListener('change', function(){
         localStorage.setItem('theme', 'dark');
     }else{
         document.body.classList.add('light-theme');
-        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+    
     }
 });
 
@@ -23,9 +25,8 @@ function loadTheme (){
 }
 
 //Tarayıcı tespiti
-
 const detectBrowser = () => {
-    const ua = navigator.userAgent;
+    const ua = navigator.userAgent; //kullanıcının kullandığı tarayıcı bilgilerini alır.
 
     switch(true){
         case ua.includes ('Chrome') && !ua.includes ('Edg') && !ua.includes('OPR'):
@@ -41,13 +42,12 @@ const detectBrowser = () => {
                             default:
                                 return "Bilinmeyen Tarayıcı!";
     }
-};
-
+}; 
 document.getElementById('browser-info').textContent = "Tarayıcınız: " + detectBrowser();
+//kullanıcıdan aldığımız bilgileri eleyip ekrana yazmasını sağlıyoruz
 
 //dropdown statü seçme
 let selectedStatus = null;
-
 document.querySelectorAll('.dropdown-content a').forEach((item) => {
     item.addEventListener('click', function (e) {
         e.preventDefault();
@@ -92,7 +92,6 @@ const createTaskElement = (text, status) =>{
     taskEl.setAttribute('data-status', status);
 
     //stillendirme
-
     taskEl.style.border = '1px solid #000';
     taskEl.style.margin = '5px';
     taskEl.style.padding = '5px';
@@ -111,7 +110,7 @@ const createTaskElement = (text, status) =>{
 
      //Düzenleme (Çift Tıklama ile)
         taskEl.addEventListener('dblclick', () => {
-            const newText = prompt("Görevi düzenleyin: ", taskEl.textContent.replace("🗑️", "").trim());
+            const newText = prompt("Görevi düzenleyin: ", taskEl.textContent.trim());
             if (newText !== null) {
                 taskEl.firstChild.textContent = newText + " ";
                 saveTasksToStorage();
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('add-task').addEventListener('click', () =>{
         const taskText = document.getElementById('task-area').value.trim();
         if(!taskText || !selectedStatus){
-            alert("Lütfen görev veya statü seçiniz!");
+            alert("Please choose a task or status!!");
             return;
         }
 
@@ -162,7 +161,7 @@ function handleLoginDate() {
     localStorage.setItem("lastLogin", today);
 }
 
-//sayfa yüklendiğinde bas
+//sayfa yüklendiğinde ekranaa bas
 
 window.onload = () => {
     document.querySelectorAll('.task-container').forEach(container => {
